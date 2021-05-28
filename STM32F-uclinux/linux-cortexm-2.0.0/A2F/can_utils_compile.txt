@@ -1,0 +1,4 @@
+./autogen.sh
+$ rm aclocal.m4
+$ CFLAGS="-Os -mcpu=cortex-m3 -mthumb" ./configure --host=arm-uclinuxeabi
+$ make DESTDIR=${INSTALL_ROOT}/A2F/root install
