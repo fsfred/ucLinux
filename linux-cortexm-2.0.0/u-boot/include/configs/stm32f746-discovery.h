@@ -455,8 +455,8 @@
 	"addip=setenv bootargs ${bootargs} ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}:eth0:off\0"				\
 	"envmaddr=" stringify(CONFIG_ENV_ADDR) "\0"		\
 	"ethaddr=C0:B1:3C:88:88:85\0"				\
-	"ipaddr=172.17.4.206\0"					\
-	"serverip=172.17.0.1\0"					\
+	"ipaddr=192.168.1.188\0"					\
+	"serverip=192.168.1.100\0"					\
 	"image=stm32f7/uImage\0"		\
 	"uboot_image=stm32f7/f746-disco.u-boot.bin\0"		\
 	"stdin=serial\0"					\

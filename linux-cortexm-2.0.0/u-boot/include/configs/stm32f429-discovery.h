@@ -140,7 +140,7 @@
 #define CONFIG_SYS_RAM_SIZE		(8 * 1024 * 1024)
 #define CONFIG_SYS_RAM_CS		1
 #define CONFIG_SYS_RAM_FREQ_DIV		2
-#define CONFIG_SYS_RAM_BASE		0xD0000000
+#define CONFIG_SYS_RAM_BASE		0xC0000000
 
 /*
  * No external Flash
