@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ftpget 172.17.0.1 $1
+chmod +x $1

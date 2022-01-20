@@ -1,0 +1,29 @@
+This fork of linux-emcraft repo contains support for STM32F746G-DISCO board.
+
+initdir contains a builed busybox from https://www.busybox.net/downloads
+
+Steps to make the uImage :
+
+1) use `make stm32f746_disco_defconfig' to configure a kernel configuration with
+support following STM32 IPs: USART, LTDC (framebuffer).
+2) `sudo tar xf initdir.tar', to extract initdir.tar to initdir directory.
+ Note: use `sudo' to ensure `tar' will succesfull create dev nodes.
+3) `export ARCH=arm'
+4) `export CROSS_COMPILE=arm-uclinuxeabi-'
+ Note: arm-uclinuxeabi-* toolchain may be in your path.
+ Note: arm-uclinuxeabi- toolchain provided by sourcery in link[1]
+5) `make', to compile kernel
+6) to create loadable uImage:
+   `mkimage -A arm -a 0xc0008000 -e 0xc0008001 -n 'Linux kernel0' -C none -T kernel -d arch/arm/boot/Image networking.uImage'
+
+
+Current status contains drivers for: 
+
+* lcd framebuffer
+
+[1] https://sourcery.mentor.com/public/gnu_toolchain/arm-uclinuxeabi/arm-2011.03-46-arm-uclinuxeabi-i686-pc-linux-gnu.tar.bz2
+
+------------------------------------------------------------------------------
+Code contributed from TEI Crete, Department of Sciences Division of Computer 
+Science in context of FP7 Dreams project.
+------------------------------------------------------------------------------

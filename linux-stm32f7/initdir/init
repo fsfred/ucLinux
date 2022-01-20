@@ -1,0 +1,23 @@
+#!/bin/sh
+
+/bin/busybox --install -s /bin
+ifconfig eth0 172.17.0.2 &
+
+:> /dev/tty0
+:> /dev/tty1
+:> /dev/tty2
+:> /dev/tty3
+:> /dev/tty4
+:> /dev/tty5
+
+mount -t proc /proc /proc
+mount -t sysfs none /sys
+
+
+mknod /dev/fb0 c 29 0
+mknod /dev/input0 c 13 64
+
+/bin/chmod +x /bin/f
+/bin/echo "stm32.local" > /proc/sys/kernel/hostname
+
+exec linuxrc

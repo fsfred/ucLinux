@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -rf arch/arm/boot/uImage arch/arm/boot/Image
+make Image &&
+mkimage -A arm -a 0xc0008000 -e 0xc0008001 -n 'Linux kernel0' -C none -T kernel -d arch/arm/boot/Image networking.uImage
